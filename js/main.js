@@ -326,6 +326,7 @@ application.pages.users = {
 
     /**
      * Робота сторінки зі списком користувачів
+     * @returns {Promise<application.pages.users>}
      */
     async perform () {
         const owner = document.body;
@@ -542,6 +543,7 @@ application.pages.userDetails = {
 
     /**
      * Робота сторінки з детальною інформацією користувача
+     * @returns {Promise<application.pages.userDetails>}
      */
     async perform () {
         const url = new URL(location.href);
@@ -689,6 +691,7 @@ application.pages.postDetails = {
 
     /**
      * Робота сторінки з коментарями до посту
+     * @returns {Promise<application.pages.postDetails>}
      */
     async perform () {
         const url = new URL(location.href);
