@@ -1,0 +1,242 @@
+/**
+ * @author Victor Taran <tarvics@gmail.com>
+ */
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+}
+
+.cursor-progress {
+    cursor: progress;
+}
+
+/********************************************************************/
+
+ul.breadcrumb {
+    margin: 0;
+    padding: 10px 16px;
+    list-style: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-image: linear-gradient(to bottom, #6495ed, #6e9aea, #78a0e7, #82a5e3, #8caae0);
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Droid Serif", sans-serif;
+    color: #dce5f3;
+}
+
+ul.breadcrumb li + li:before {
+    padding: 8px;
+    content: "/";
+    color: #1b3f6b;
+}
+
+ul.breadcrumb li a {
+    text-decoration: none;
+    color: #2b4ca1;
+}
+
+ul.breadcrumb li a:hover {
+    text-decoration: underline;
+    color: #dce5f3;
+}
+
+/********************************************************************/
+
+/* Область розміщення віджетів */
+.layout {
+    width: 90%;
+    min-width: 300px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    /*border: 1px dotted black;*/
+    font-family: "Droid Serif", sans-serif;
+    font-size: 12px;
+}
+
+/* Відступ від верхнього меню */
+.layout:first-of-type {
+    margin: 40px auto 20px;
+}
+
+/* По замовчуванню, ширина віджета 50% по центру */
+.layout-card {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Розміщення 1 віджета у рядку */
+.layout.columns-1 > .layout-card {
+    width: calc(100% - 4px);
+}
+
+/* Розміщення 2 віджета у рядку */
+.layout.columns-2 > .layout-card {
+    width: calc(50% - 4px);
+}
+
+/* Розміщення 3 віджета у рядку */
+.layout.columns-3 > .layout-card {
+    width: calc(33.3% - 4px);
+}
+
+/* Розміщення 4 віджета у рядку */
+.layout.columns-4 > .layout-card {
+    width: calc(25% - 4px);
+}
+
+/* Розміщення 5 віджетів у рядку */
+.layout.columns-5 > .layout-card {
+    width: calc(20% - 4px);
+}
+
+/* Ширина 20% */
+.layout.width-1 {
+    width: 20%;
+}
+
+/* Ширина 40% */
+.layout.width-2 {
+    width: 40%;
+}
+
+/* Ширина 60% */
+.layout.width-3 {
+    width: 60%;
+}
+
+/* Ширина 80% */
+.layout.width-4 {
+    width: 80%;
+}
+
+/* Ширина 100% */
+.layout.width-5 {
+    width: 100%;
+}
+
+/* Робоча область віджетів */
+.layout-body {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    box-shadow: 3px 3px 3px lightgray;
+    background-image: linear-gradient(to right, #f3f9ff, #f7faff, #fafcff, #fdfdff, #ffffff);
+}
+
+/* Область заголовку віджетів */
+.layout-header {
+    padding: 5px;
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: linear-gradient(to bottom, #6495ed, #6e9aea, #78a0e7, #82a5e3, #8caae0);
+    color: white;
+    box-shadow: 3px 3px 3px lightgray;
+}
+
+/* Висота робочої області із врахуванням висоти заголовку */
+.layout-header + .layout-body {
+    height: calc(100% - 24px); /* header: font-size: 12px + padding: 2*5px + box-shadow: 2px*/
+}
+
+/* Нижня область віджета */
+.layout-footer {
+    margin-top: auto;
+    display: flex;
+    line-height: 20px;
+    padding: 5px 0 0;
+    box-sizing: border-box;
+    border-top: 1px solid gray;
+}
+
+/* Кнопка нижньої області віджета, вирівняна праворуч */
+.layout-button {
+    margin: 1px 1px 1px auto;
+}
+
+/* Рядок віджета */
+.layout-row {
+    display: flex;
+    line-height: 20px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/* Назва значення у рядку */
+.layout-caption {
+    font-weight: bold;
+    /*white-space: nowrap;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Додаємо до назви значення ":" */
+.layout-caption::after {
+    content: ":";
+}
+
+/* Область значення у рядку */
+.layout-value {
+    color: #335e96;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* У випадку, якщо назва значення іде першою у рядку */
+.layout-row > .layout-caption:first-child {
+    width: 80px;
+    text-align: end;
+}
+
+/* У випадку, якщо значення іде після назви у рядку */
+.layout-row > .layout-caption + .layout-value {
+    width: calc(100% - 80px);
+    margin-left: 5px;
+}
+
+/* Робимо лінійовані рядки, окрім першого */
+.layout-row:not(:first-child) {
+    border-top: 1px dotted gray;
+}
+
+/* У випадку, якщо за рядком іде заголовок, прибираємо у тому рядку лініювання */
+.layout-header + .layout-row {
+    border-top: none;
+}
+
+.layout-header + .layout-row, /* Між заголовком і рядком */
+.layout-row + .layout-header, /* Між рядком і заголовком */
+.layout-row + .layout-card,   /* Між рядком і внутрішнім віджетом */
+.layout-body > .layout-card + .layout-card /* Між внутрішніми віджетами */ {
+    margin-top: 5px;
+}
+
+button#load-user-posts-btn {
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+    font-size: 18px;
+    font-family: sans-serif;
+    line-height: 24px;
+    text-transform: uppercase;
+}
