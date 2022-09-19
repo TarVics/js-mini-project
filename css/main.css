@@ -74,10 +74,13 @@ ul.breadcrumb li a:hover {
     margin: 40px auto 20px;
 }
 
-/* По замовчуванню, ширина віджета 50% по центру */
-.layout-card {
+/* Параметри зовнішнього віджета */
+.layout > .layout-card {
+    /*width: 300px;*/
     width: 50%;
     margin: 0 auto;
+    box-shadow: 3px 3px 3px lightgray;
+
 }
 
 /* Розміщення 1 віджета у рядку */
@@ -130,39 +133,42 @@ ul.breadcrumb li a:hover {
     width: 100%;
 }
 
+/* Область заголовку віджетів */
+.layout-header {
+    padding: 1px;
+    box-sizing: border-box;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #6495ed, #6e9aea, #78a0e7, #82a5e3, #8caae0);
+    color: white;
+}
+
 /* Робоча область віджетів */
 .layout-body {
     padding: 5px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
     border: 1px solid gray;
-    box-shadow: 3px 3px 3px lightgray;
     background-image: linear-gradient(to right, #f3f9ff, #f7faff, #fafcff, #fdfdff, #ffffff);
-}
-
-/* Область заголовку віджетів */
-.layout-header {
-    padding: 5px;
-    box-sizing: border-box;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    background-image: linear-gradient(to bottom, #6495ed, #6e9aea, #78a0e7, #82a5e3, #8caae0);
-    color: white;
-    box-shadow: 3px 3px 3px lightgray;
 }
 
 /* Висота робочої області із врахуванням висоти заголовку */
 .layout-header + .layout-body {
-    height: calc(100% - 24px); /* header: font-size: 12px + padding: 2*5px + box-shadow: 2px*/
+    height: calc(100% - 22px); /* header: font-size: 12px + padding: 2*5px + box-shadow: 2px; */
 }
 
 /* Нижня область віджета */
 .layout-footer {
     margin-top: auto;
     display: flex;
-    line-height: 20px;
+    line-height: 22px;
     padding: 5px 0 0;
     box-sizing: border-box;
     border-top: 1px solid gray;
@@ -182,6 +188,10 @@ ul.breadcrumb li a:hover {
     align-items: center;
 }
 
+.layout-row:nth-child(even) {
+/*    background: rgba(123, 161, 229, 0.2);*/
+}
+
 /* Назва значення у рядку */
 .layout-caption {
     font-weight: bold;
@@ -197,9 +207,17 @@ ul.breadcrumb li a:hover {
 
 /* Область значення у рядку */
 .layout-value {
-    color: #335e96;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.layout-row .layout-value {
+    color: #335e96;
+}
+
+.layout-header .layout-value {
+    color: white;
+    white-space: nowrap;
 }
 
 /* У випадку, якщо назва значення іде першою у рядку */
@@ -240,3 +258,4 @@ button#load-user-posts-btn {
     line-height: 24px;
     text-transform: uppercase;
 }
+

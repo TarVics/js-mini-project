@@ -725,6 +725,5 @@ application.pages.postDetails = {
             owner.classList.remove('cursor-progress');
         }
     }
-
 }
 
